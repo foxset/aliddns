@@ -1,7 +1,7 @@
 name: Aliddns Actions
 on:
   schedule:
-    - cron: "1 9 * * *"
+    - cron: "0 19 * * *"
 
 job:
  build:

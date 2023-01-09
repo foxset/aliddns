@@ -8,4 +8,4 @@ job:
   runs-on: ubuntu-latest
   steps:
    name: Run aliddns
-     run: sh desk.sh
+     run: sh ./aliddns/desk.sh

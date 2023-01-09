@@ -1,11 +1,11 @@
 name: Aliddns Actions
 on:
- push:
-  branches:[main]
+  schedule:
+    - cron: "1 9 * * *"
 
 job:
  build:
   runs-on: ubuntu-latest
   steps:
    name: Run aliddns
-     run: bash ./desk.sh
+     run: sh desk.sh

@@ -1,3 +1,0 @@
-test:
-  script:
-    - bash aliddns/desk.sh

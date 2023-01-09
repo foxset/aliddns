@@ -1,1 +1,11 @@
+name: Aliddns Actions
+on:
+ push:
+  branches:[main]
 
+job:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   name: Run aliddns
+     run: bash ./desk.sh

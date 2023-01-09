@@ -3,9 +3,12 @@ on:
   schedule:
     - cron: "0 19 * * *"
 
-job:
- build:
-  runs-on: ubuntu-latest
-  steps:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+steps:
+   uses: actions/checkout@v2
+   name: Create ZIP package artifact
    name: Run aliddns
-     run: sh ./aliddns/desk.sh
+   run: sh ./aliddns/desk.sh

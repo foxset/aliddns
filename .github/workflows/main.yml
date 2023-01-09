@@ -9,6 +9,5 @@ jobs:
   
 steps:
    uses: actions/checkout@v2
-   name: Create ZIP package artifact
-   name: Run aliddns
-   run: bash desk.sh
+ - name: Run aliddns
+   run: bash ./desk.sh

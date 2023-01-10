@@ -5,11 +5,10 @@ on:
     - cron:  '0 19 * * *'
 
 jobs:
-  build:
-
+  bot:
     runs-on: ubuntu-latest
-steps:
-    
-  - name: path
-    run: bash ./desk.sh
-    shell: bash
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v3
+      - name: 'aliddns'
+        run: bash ./desk.sh

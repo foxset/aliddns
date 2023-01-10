@@ -7,8 +7,9 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     
-steps:
-      - name: 'Checkout codes'
-        uses: actions/checkout@v3
-      - name: 'aliddns'
-        run: bash ./desk.sh
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: ./desk.sh

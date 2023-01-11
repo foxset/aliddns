@@ -14,7 +14,6 @@ else
 fi
 
 now=`date`
-
 die () {
     echo $1
 }
@@ -29,20 +28,19 @@ ipv6s=`nslookup -query=AAAA foxset.synology.me | grep 'Address: ' | tail -n1 | a
 ipv6s=$ipv6s"d1d7:3e3c:3354:de09"
 echo $ipv6s
 
-
-
+# 把ipv6s改名为ipv6
 for ipv6 in $ipv6s 
 do
   #ipv6 = $ipv6
   break
 done
 
-echo $ipv6
-
-current_ipv6=`nslookup -query=AAAA $aliddnsipv6_name 2>&1`
-# echo $current_ipv6
+#echo $ipv6
 
 #  获取原域名（desk.foxset.top）的ipv6地址
+current_ipv6=`nslookup -query=AAAA $aliddnsipv6_name 2>&1`
+
+#  截取并输出原域名ipv6地址
 current_ipv6=`echo "$current_ipv6" | grep 'Address: ' | tail -n1 | awk '{print $NF}'`
 echo $current_ipv6
 
@@ -61,9 +59,7 @@ else
     unset aliddnsipv6_record_id
 fi
 
-
 timestamp=`date -u "+%Y-%m-%dT%H%%3A%M%%3A%SZ"`
-
 
 urlencode() {
     # urlencode <string>

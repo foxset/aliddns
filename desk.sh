@@ -40,11 +40,12 @@ done
 echo $ipv6
 
 current_ipv6=`nslookup -query=AAAA $aliddnsipv6_name 2>&1`
-#echo $current_ipv6
+# echo $current_ipv6
 
+#  获取原域名（desk.foxset.top）的ipv6地址
 current_ipv6=`echo "$current_ipv6" | grep 'Address: ' | tail -n1 | awk '{print $NF}'`
 echo $current_ipv6
-#获取原域名（desk.foxset.top）的ipv6地址
+
 
 if [ "$?" -eq "0" ]
 then

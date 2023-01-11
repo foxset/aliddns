@@ -1,7 +1,7 @@
 name: AUTO ALIDDNS
 on:
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "0 16 * * *"
 
 jobs:
   aliddns:

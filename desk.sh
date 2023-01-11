@@ -26,6 +26,8 @@ ipv6s=`nslookup -query=AAAA foxset.synology.me | grep 'Address: ' | tail -n1 | a
 
 # 前4段与目标设备固定ipv6的后4段（“d1d7:3e3c:3354:de09”）进行拼接
 ipv6s=$ipv6s"d1d7:3e3c:3354:de09"
+
+# 输出ipv6s
 echo $ipv6s
 
 # 把ipv6s改名为ipv6

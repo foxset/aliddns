@@ -18,7 +18,7 @@ die () {
     echo $1
 }
 
-#  从群晖网卡中获取ipv6地址的前4段
+#  从本地网卡中获取ipv6地址的前4段
 #ipv6s=`ip addr show eth0 | grep "inet6.*global" | awk '{print $2}' | awk -F"/" '{print $1}'  | cut -b 1-20`  || die "$ipv6"
 
 #  从域名foxset.synology.me获取ipv6地址的前4段
@@ -42,7 +42,7 @@ done
 #  获取原域名（desk.foxset.top）的ipv6地址
 current_ipv6=`nslookup -query=AAAA $aliddnsipv6_name 2>&1`
 
-#  截取并输出原域名ipv6地址
+#  筛选并输出原域名ipv6的地址
 current_ipv6=`echo "$current_ipv6" | grep 'Address: ' | tail -n1 | awk '{print $NF}'`
 echo $current_ipv6
 

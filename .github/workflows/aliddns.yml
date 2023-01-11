@@ -2,7 +2,7 @@ name: AUTO ALIDDNS
 on:
   schedule:
     # 北京时间24：00执行（东八区时间=UTC-8）
-    - cron: "0 16 * * *"
+    - cron: "0 10 * * *"
 
 jobs:
   aliddns:

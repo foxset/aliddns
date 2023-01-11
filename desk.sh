@@ -19,10 +19,10 @@ die () {
 }
 
 #  从本地网卡中获取ipv6地址的前4段
-#ipv6s=`ip addr show eth0 | grep "inet6.*global" | awk '{print $2}' | awk -F"/" '{print $1}'  | cut -b 1-20`  || die "$ipv6"
+#ipv6s=`ip addr show eth0 | grep "inet6.*global" | awk '{print $2}' | awk -F"/" '{print $1}'  | cut -b 1-20`  | die "$ipv6"
 
 #  从域名foxset.synology.me获取ipv6地址的前4段
-ipv6s=`nslookup -query=AAAA foxset.synology.me | grep 'Address: ' | tail -n1 | awk '{print $NF}' | cut -b 1-20` || die "$ipv6" 
+ipv6s=`nslookup -query=AAAA foxset.synology.me | grep 'Address: ' | tail -n1 | awk '{print $NF}' | cut -b 1-20` | die "$ipv6" 
 
 # 前4段与目标设备固定ipv6的后4段（“d1d7:3e3c:3354:de09”）进行拼接
 ipv6s=$ipv6s"d1d7:3e3c:3354:de09"

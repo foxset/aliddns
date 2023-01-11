@@ -8,4 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # 安装python脚本环境
+    # - uses: actions/setup-python@v3
+    # 安装脚本需要的环境
+    # - run: pip install requests
     - run: bash desk.sh

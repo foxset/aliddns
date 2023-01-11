@@ -1,7 +1,8 @@
 name: AUTO ALIDDNS
 on:
+  workflow_dispatch:
   schedule:
-    # 北京时间24：00执行（北京时间=UTC+8）
+    # 北京时间24：00执行（北京时间=UCT+8）
     - cron: "0 10 * * *"
 
 jobs:

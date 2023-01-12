@@ -10,6 +10,7 @@ jobs:
   aliddns:
     runs-on: ubuntu-latest
     steps:
+    # 拉取官方系统仓库代码
     - uses: actions/checkout@v3
     # 安装python脚本环境
     # - uses: actions/setup-python@v3

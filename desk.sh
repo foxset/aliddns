@@ -22,7 +22,7 @@ die () {
 #ipv6s1=`ip addr show eth0 | grep "inet6.*global" | awk '{print $2}' | awk -F"/" '{print $1}'  | cut -d \: -f 1-4     `  || die "$ipv6"
 
 #  从域名www.foxset.top获取ipv6地址的前4段
-ipv6s1=`nslookup -query=AAAA www.foxset.top | grep 'Address: ' | tail -n1 | awk '{print $NF}' | cut  cut -d \: -f 1-4  ` || die "$ipv6" 
+ipv6s1=`nslookup -query=AAAA www.foxset.top | grep 'Address: ' | tail -n1 | awk '{print $NF}'  | cut -d \: -f 1-4  `     || die "$ipv6" 
 
 # 前4段与目标设备固定ipv6的后4段（“2e0:b4ff:fe56:1a75”）进行拼接
 ipv6s=$ipv6s1"2e0:b4ff:fe56:1a75"
